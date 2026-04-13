@@ -34,6 +34,8 @@ namespace Genderize
             builder.Services.AddHttpClient<IGenderizeService, GenderizeService>();
             builder.Services.AddScoped<IGenderizeService, GenderizeService>();
 
+            builder.WebHost.UseUrls("http://0.0.0.0:8080");
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
