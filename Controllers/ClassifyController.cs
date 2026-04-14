@@ -19,7 +19,7 @@ namespace Genderize.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Classify([FromQuery] string name)
+        public async Task<IActionResult> Classify(string name)
         {
             try
             {
