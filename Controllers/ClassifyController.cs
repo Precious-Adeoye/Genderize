@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Genderize.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    //[ApiController]
     public class ClassifyController : ControllerBase
     {
         private readonly IGenderizeService _genderizeService;
