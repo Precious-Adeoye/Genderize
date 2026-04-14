@@ -1,6 +1,9 @@
 
 using Genderize.Services.Implimentation;
 using Genderize.Services.Interface;
+using System.Text.Json;
+
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Genderize
 {
@@ -18,6 +21,10 @@ namespace Genderize
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
              builder.Services.AddOpenApi();
 
+            builder.Services.ConfigureHttpJsonOptions(options =>
+            {
+                options.SerializerOptions.WriteIndented = true;
+            });
 
             // Add CORS
             builder.Services.AddCors(options =>
@@ -46,12 +53,15 @@ namespace Genderize
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
             app.UseCors("AllowAll");
             app.UseAuthorization();
 
 
             app.MapControllers();
+
+            app.MapGet("/test", () => Results.Ok(new { message = "API is reachable" }));
+
+            app.MapControllers(); // Your existing line
 
             app.Run();
         }
