@@ -3,8 +3,31 @@
 # 🧙 Backend Wizards API - Stage 0
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/API-Live-success)](https://your-api-url.com)
+[![API Status](https://img.shields.io/badge/API-Live-success)](https://genderize.fly.dev)
 [![Framework](https://img.shields.io/badge/Framework-ASP.NET%20Core%208.0-blue)](https://dotnet.microsoft.com)
+
+## 🚀 Live Demo
+
+The API is live and ready to test:
+
+- **Base URL**: `https://genderize.fly.dev/api`
+- **Sample Request**: [Click to test with name 'john'](https://genderize.fly.dev/api/classify?name=john)
+- **Sample Request**: `curl https://genderize.fly.dev/api/classify?name=jane`
+
+### Quick Test Commands
+
+```bash
+# Test with a common name
+curl "https://genderize.fly.dev/api/classify?name=john"
+
+# Test with a female name
+curl "https://genderize.fly.dev/api/classify?name=sarah"
+
+# Test error handling (missing name)
+curl "https://genderize.fly.dev/api/classify"
+
+# Test unknown name (should return 422)
+curl "https://genderize.fly.dev/api/classify?name=xyzabc123"
 
 ## 📌 Project Overview
 
