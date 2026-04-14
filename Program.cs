@@ -57,11 +57,9 @@ namespace Genderize
             app.UseAuthorization();
 
 
+            app.MapGet("/test", () => Results.Ok(new { message = "API is reachable" }));
             app.MapControllers();
 
-            app.MapGet("/test", () => Results.Ok(new { message = "API is reachable" }));
-
-            app.MapControllers(); // Your existing line
 
             app.Run();
         }
